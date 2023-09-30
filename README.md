@@ -204,7 +204,7 @@ private void putItemDown(String itemToPutDown) {
 6. `playerInventory.remove(itemDropped.get());`: Entfernt das Item aus dem Spielerinventar.
 7. `inventorySpaceAvailable -= itemDropped.get().getItemWeight();`: Aktualisiert den verfügbaren Inventarraum des Spielers.
 
-###2.7 Befehl "map"
+### 2.7 Befehl "map"
 
 Der `map` Befehl wird durch die Methode `createAsciiMap` implementiert. Diese Methode erzeugt eine ASCII-basierte Darstellung der Spielwelt. Sie nimmt die Liste aller `Room`objekte und das `currentRoom` Objekt. Innerhalb der Methode werden mehrere Schlaufen verwendet um es darzustellen. Sie zeigt die aktuelle position des Spielers und man sieht auch die anderen Räume
 
