@@ -1,4 +1,6 @@
-package ch.bbw.zork;
+package ch.bbw.zork.Room;
+
+import ch.bbw.zork.Enemy;
 
 import java.util.ArrayList;
 import java.util.List;
