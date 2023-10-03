@@ -224,6 +224,206 @@ Dieser Array speichert alle `room` Objekte
 private List<Room> allRooms;
 ```
 
+### 3.1 Der Spieler kann ein Gegenstand bei sich tragen
+
+#### Realisierung des Inventarsystems
+
+#### Variablen
+
+```
+private ArrayList<Item> playerInventory;
+private double inventorySpaceCapacity;
+private double inventorySpaceAvailable;
+```
+
+- `playerInventory`: Eine ArrayList, die die im Inventar enthaltenen Gegenstände speichert.
+- `inventorySpaceCapacity`: Die maximale Kapazität des Inventars in Einheiten.
+- `inventorySpaceAvailable`: Die verfügbare Kapazität des Inventars in Einheiten.
+
+#### Methoden
+
+##### `takeItem(String itemToTake)`
+
+```
+public void takeItem(String itemToTake) {
+  ...
+}
+```
+
+Diese Methode führt folgende Aktionen aus:
+
+- Überprüft, ob der Raum das angegebene Item enthält.
+- Überprüft, ob genügend Platz im Inventar vorhanden ist.
+- Fügt das Item zur `playerInventory` hinzu.
+- Aktualisiert `inventorySpaceAvailable`.
+
+##### `putItemDown(String itemToPutDown)`
+
+```
+public void putItemDown(String itemToPutDown) {
+  ...
+}
+```
+
+Diese Methode führt folgende Aktionen aus:
+
+- Entfernt das Item aus der `playerInventory`.
+- Fügt das Item dem aktuellen Raum hinzu.
+- Aktualisiert `inventorySpaceAvailable`.
+
+##### `checkInventory()`
+
+```
+public void checkInventory() {
+  ...
+}
+```
+
+Diese Methode zeigt den Inhalt der `playerInventory` an und informiert über den verfügbaren Platz.
+
+
+### Der Spieler kann mehrere Gegenstände tragen (mit einem Maximalgewicht)
+
+Dieses Dokument beschreibt das Inventarsystem für das Zork-Spiel, das in Java implementiert ist. Der Spieler kann mehrere Gegenstände tragen, die jedoch ein definiertes Maximalgewicht nicht überschreiten dürfen.
+
+#### Variablen
+
+```
+private ArrayList<Item> playerInventory;
+private double maxWeight;
+private double currentWeight;
+```
+
+- `playerInventory`: Eine ArrayList, die die Gegenstände im Inventar des Spielers speichert.
+- `maxWeight`: Die maximale Traglast des Inventars in Gewichtseinheiten.
+- `currentWeight`: Das aktuelle Gesamtgewicht der Gegenstände im Inventar.
+
+#### Methoden
+
+##### `addItem(Item itemToAdd)`
+
+```
+public boolean addItem(Item itemToAdd) {
+  ...
+}
+```
+
+Diese Methode führt folgende Aktionen aus:
+
+- Überprüft, ob das Hinzufügen des Gegenstands das Maximalgewicht überschreiten würde.
+- Wenn dies nicht der Fall ist, fügt sie den Gegenstand zur `playerInventory` hinzu und aktualisiert `currentWeight`.
+- Gibt `true` zurück, wenn das Hinzufügen erfolgreich war, sonst `false`.
+
+##### `removeItem(Item itemToRemove)`
+
+```
+public void removeItem(Item itemToRemove) {
+  ...
+}
+```
+
+Diese Methode führt folgende Aktionen aus:
+
+- Entfernt den Gegenstand aus der `playerInventory`.
+- Aktualisiert das `currentWeight`.
+
+##### `checkInventory()`
+
+```
+public void checkInventory() {
+  ...
+}
+```
+
+Diese Methode:
+
+- Listet die Gegenstände im Inventar auf.
+- Zeigt das aktuelle Gewicht und das verbleibende Gewicht an.
+
+#### Beispiel
+
+Stellen Sie sich vor, der Spieler betritt den Raum mit einem Schlüssel (`weight = 0.4`) und einer Axt (`weight = 1.6`). Der Spieler hat bereits einen Slimeball (`weight = 0.1`) im Inventar und das `maxWeight` ist 2. Der Spieler kann nur eines der Items nehmen da es das Maximal Gewicht überschreiten würde, wenn er beide nehmen wollte.
+
+
+### 3.3 Der Spieler kann Gegenstände auch wieder ablegen
+
+#### Variablen
+
+```
+private ArrayList<Item> playerInventory;
+private double maxWeight;
+private double currentWeight;
+```
+
+- `playerInventory`: Eine ArrayList, die die Gegenstände im Inventar des Spielers speichert.
+- `maxWeight`: Das maximale Gewicht, das das Inventar tragen kann.
+- `currentWeight`: Das aktuelle Gewicht des Inventars.
+
+#### Methoden
+
+##### `addItem(Item item)`
+
+```
+public boolean addItem(Item item) {
+  ...
+}
+```
+
+Fügt einen Gegenstand zum Inventar hinzu, wenn das Maximalgewicht nicht überschritten wird, und aktualisiert `currentWeight`.
+
+##### `removeItem(Item item)`
+
+```
+public boolean removeItem(Item item) {
+  ...
+}
+```
+
+Entfernt einen Gegenstand aus dem Inventar und aktualisiert `currentWeight`. Gibt `true` zurück, wenn der Gegenstand erfolgreich entfernt wurde, sonst `false`.
+
+##### `listItems()`
+
+```
+public void listItems() {
+  ...
+}
+```
+
+Listet alle Gegenstände im Inventar sowie das aktuelle und das maximale Gewicht.
+
+##### `checkWeight()`
+
+```
+public void checkWeight() {
+  ...
+}
+```
+
+Überprüft das aktuelle Gewicht und meldet, wie viel Gewicht noch hinzugefügt werden kann.
+
+#### Beispiel
+
+Der Spieler betritt einen Raum mit einem Schlüssel (`weight = 0.4`) und einer Machete (`weight = 1.6`). Der Spieler hat bereits einen Slimeball (`weight = 0.1`) im Inventar und das `maxWeight` ist 2. 
+
+- Der Spieler kann entweder Schlüssel, oder die Machete aufnehmen. 
+- Der Spieler kann aber auch einfach den nutzlosen Slimeball ablegen und den Schlüssel und die Machete aufnehmen
+
+### Code-Schnipsel für `removeItem`
+
+```
+public boolean removeItem(Item item) {
+    if (playerInventory.contains(item)) {
+        playerInventory.remove(item);
+        currentWeight -= item.getWeight();
+        return true;
+    }
+    return false;
+}
+```
+
+Dieser Code zeigt, wie die `removeItem`Methode implementiert werden könnte.
+
+
 ## Features
 
 - Text-based navigation between rooms
