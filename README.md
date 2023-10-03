@@ -424,6 +424,41 @@ public boolean removeItem(Item item) {
 Dieser Code zeigt, wie die `removeItem`Methode implementiert werden könnte.
 
 
+### 3.4 Das Konzept der Vererbung wird eingesetzt
+
+Das Konzept der Vererbung wird genutzt, um die Funktionalität der Basisklasse `Room` zu erweitern.
+
+#### Basisklasse: Room
+Die Klasse `Room` dient als Basisklasse und enthält grundlegende Eigenschaften und Methoden, die alle Raumtypen teilen könnten.
+
+```
+public class Room {
+    private String description;
+
+    public Room(String description) {
+        this.description = description;
+    }
+    ...
+}
+```
+
+#### RoomWithALock
+Die Klasse RoomWithALock erbt von Room und fügt zusätzliche Eigenschaften und Methoden hinzu, die speziell für einen Raum mit einem Schloss sind.
+
+```
+public class RoomWithALock extends Room {
+    private boolean isLocked;
+
+    public RoomWithALock(String description) {
+        super(description);
+        this.isLocked = true;
+    }
+    ...
+}
+```
+
+Durch die Verwendung der Vererbung können wir neue Raumtypen wie RoomWithALock erstellen, ohne die Basisklasse Room zu modifizieren. Somit macht man den Code wiederverwendbar, wir könnten einfach noch ein Raumtyp ohne Problem erstellen z.B. RoomWithABoss 😲.
+
 ## Features
 
 - Text-based navigation between rooms
