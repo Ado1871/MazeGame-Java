@@ -26,7 +26,7 @@ public class Zork2 {
 
 Der Spieler Startet Oben rechts im Starting Room, bewegt sich nach Westen "west" und landet im Lab (Dort ist eine Machete aufzufinden, welche später sehr nützlich wäre, deshalb sollte man Sie aufheben), im süden "south" liegt Classroom, dort befindet sich ein nutzloses Buch. Weiter im Osten "east" ist das Atelier (Wo sich Monster "Slimes" befinden, ohne Machete würde ich mich nicht wagen es zu betreten), südlich des Ateliers erreicht man den Basement (Dort ist ein Slimeball). Nun gibt es 2 mögliche wege, in Westen "west" ist dann das Ziel, dass einen Schlüssel erfordert und in Osten "east" wäre dann der schlüssel den Sie aufheben sollten.
 
-![ZorkMap](https://github.com/Ado1871/MazeGame-Java/assets/138719406/998d99e2-bf0e-485a-a405-222f6bb2c551)
+![ZorkMap](https://www.canva.com/design/DAFuWbZzBZU/v3peHwoTXxJDbhU4Y9Q4pg/view?utm_content=DAFuWbZzBZU&utm_campaign=celebratory_first_publish&utm_medium=link&utm_source=celebratory_first_publish)
 
 
 ### 2.2 Gewonnen
