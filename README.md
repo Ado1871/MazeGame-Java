@@ -24,7 +24,10 @@ public class Zork2 {
 
 ### 2.1 Eigene Räumlichkeiten definieren.
 
-Der Spieler Startet Oben rechts im Starting Room, bewegt sich nach Osten "east" und landet im Lab (Dort ist eine Machete aufzufinden, welche später vielleicht nützlich sein könnte), im süden "south" liegt Classroom, welches sehr wichtig ist, da sich der Schlüssel zum Sieg dort befindet (Und ein nutzloses Buch). Weiter im Osten "east" ist das Atelier (Wo sich vielleicht Monster "Slimes" befinden), südlich des Ateliers erreicht man den Basement (Dort ist ein Slimeball). Im Osten ist dann das Ziel, dass einen Schlüssel erfordert, falls wir den Schlüssel haben, können wir ans Ziel kommen, ansosten müssen wir deb Schlüssel aufsuchen.
+Der Spieler Startet Oben rechts im Starting Room, bewegt sich nach Westen "west" und landet im Lab (Dort ist eine Machete aufzufinden, welche später sehr nützlich wäre, deshalb sollte man Sie aufheben), im süden "south" liegt Classroom, dort befindet sich ein nutzloses Buch. Weiter im Osten "east" ist das Atelier (Wo sich Monster "Slimes" befinden, ohne Machete würde ich mich nicht wagen es zu betreten), südlich des Ateliers erreicht man den Basement (Dort ist ein Slimeball). Nun gibt es 2 mögliche wege, in Westen "west" ist dann das Ziel, dass einen Schlüssel erfordert und in Osten "east" wäre dann der schlüssel den Sie aufheben sollten.
+
+![ZorkMap](https://github.com/Ado1871/MazeGame-Java/assets/138719406/998d99e2-bf0e-485a-a405-222f6bb2c551)
+
 
 ### 2.2 Gewonnen
 
@@ -228,6 +231,11 @@ private List<Room> allRooms;
 - Weight-based inventory system
 - Map display to see the layout of rooms and player location
 - Win condition upon reaching a specific room which has to be unlocked with a key
+
+## Features to be introduced
+
+- Combat system
+- Graphical User Interface
 
 ## Requirements
 
